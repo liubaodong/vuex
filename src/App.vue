@@ -1,32 +1,56 @@
+<!--
+ * @description: 头部描述
+ * @Author: Coder
+ * @Date: 2019-12-11 20:21:39
+ * @LastEditors: Coder
+ * @LastEditTime: 2019-12-11 21:10:13
+ * @FilePath: \vuex\src\App.vue
+ -->
 <template>
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <div>
+      <div>
+        <button @click="add">++</button>
+        <button @click="del">--</button>
+        <button @click="clear">clear</button>
+      </div>
+      <div>
+        <span>{{ count }}</span>
+      </div>
+    </div>
+    <router-view />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="scss"></style>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  data() {
+    return {
+      num: 0
+    };
+  },
+  mounted() {},
+  computed: {
+    count() {
+      return this.$store.state.count;
+    }
+  },
+  methods: {
+    add() {
+      this.num = this.$store.commit("add");
+    },
+    del() {
+      this.$store.commit("del");
+    },
+    clear() {
+      this.$store.commit("clear");
     }
   }
-}
-</style>
+};
+</script>
