@@ -3,7 +3,7 @@
  * @Author: Coder
  * @Date: 2019-12-14 15:20:22
  * @LastEditors: Coder
- * @LastEditTime: 2019-12-14 18:17:59
+ * @LastEditTime: 2019-12-14 20:31:32
  * @FilePath: \vuex\src\layout\header\header.vue
  -->
 <template>
@@ -11,34 +11,35 @@
     <a-layout-header style="background: #fff; padding: 0">
       <a-icon
         class="trigger"
-        :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-        @click="getState"
+        :type="toggle ? 'menu-unfold' : 'menu-fold'"
+        @click="$store.commit(TOGGLE)"
       />
+      <slot name="left"></slot>
+      <slot></slot>
+      <slot name="right"></slot>
     </a-layout-header>
   </div>
 </template>
 
 <script>
+import { TOGGLE } from "@/store/types.js";
+import { mapGetters } from "vuex";
 export default {
   name: "layout_header",
   components: {},
   props: {},
   data() {
     return {
-      collapsed: false
+      TOGGLE
     };
   },
   created() {},
   mounted() {},
   watch: {},
-  computed: {},
-  methods: {
-    getState() {
-      let set = sessionStorage.setItem("store", this.$store.state);
-      //  let get = sessionStorage.getItem("store");
-      console.log(localStorage);
-    }
-  }
+  computed: {
+    ...mapGetters(["toggle"])
+  },
+  methods: {}
 };
 </script>
 <style lang="scss" scoped></style>

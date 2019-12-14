@@ -3,12 +3,12 @@
  * @Author: Coder
  * @Date: 2019-12-14 15:20:40
  * @LastEditors: Coder
- * @LastEditTime: 2019-12-14 17:31:03
+ * @LastEditTime: 2019-12-14 20:25:39
  * @FilePath: \vuex\src\layout\aside\aside.vue
  -->
 <template>
   <div>
-    <a-layout-sider :trigger="null" collapsible v-model="collapsed">
+    <a-layout-sider :trigger="null" collapsible v-model="toggle">
       <div class="logo"></div>
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['1']">
         <a-menu-item key="1">
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "layout_aside",
   components: {},
@@ -39,7 +40,9 @@ export default {
   created() {},
   mounted() {},
   watch: {},
-  computed: {},
+  computed: {
+    ...mapGetters(["toggle"])
+  },
   methods: {}
 };
 </script>
