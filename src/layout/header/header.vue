@@ -3,7 +3,7 @@
  * @Author: Coder
  * @Date: 2019-12-14 15:20:22
  * @LastEditors: Coder
- * @LastEditTime: 2019-12-14 17:41:58
+ * @LastEditTime: 2019-12-14 18:17:59
  * @FilePath: \vuex\src\layout\header\header.vue
  -->
 <template>
@@ -12,7 +12,7 @@
       <a-icon
         class="trigger"
         :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-        @click="() => $store.commit('asideToggle')"
+        @click="getState"
       />
     </a-layout-header>
   </div>
@@ -32,7 +32,13 @@ export default {
   mounted() {},
   watch: {},
   computed: {},
-  methods: {}
+  methods: {
+    getState() {
+      let set = sessionStorage.setItem("store", this.$store.state);
+      //  let get = sessionStorage.getItem("store");
+      console.log(localStorage);
+    }
+  }
 };
 </script>
 <style lang="scss" scoped></style>

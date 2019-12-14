@@ -3,7 +3,7 @@
  * @Author: Coder
  * @Date: 2019-12-11 20:21:39
  * @LastEditors: Coder
- * @LastEditTime: 2019-12-14 17:46:34
+ * @LastEditTime: 2019-12-14 18:08:20
  * @FilePath: \vuex\src\main.js
  */
 import Vue from "vue";
@@ -26,6 +26,10 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+
   render: h => h(App)
 }).$mount("#app");
 /* 持久化vuex */
+window.addEventListener("beforeunload", () => {
+  sessionStorage.setItem("store", JSON.stringify(this.$store.state));
+});
