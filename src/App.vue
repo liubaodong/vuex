@@ -3,7 +3,7 @@
  * @Author: Coder
  * @Date: 2019-12-11 20:21:39
  * @LastEditors: Coder
- * @LastEditTime: 2019-12-14 15:17:22
+ * @LastEditTime: 2019-12-14 17:47:28
  * @FilePath: \vuex\src\App.vue
  -->
 <template>
@@ -26,6 +26,9 @@ export default {
     return {
       reload: true
     };
+  },
+  created() {
+    console.log("vuex");
   },
   mounted() {},
   computed: {},
