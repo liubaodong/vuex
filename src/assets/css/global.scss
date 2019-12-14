@@ -17,5 +17,6 @@
   margin: 16px;
 }
 .ant-layout-sider {
-  min-height: 392px;
+  min-height: calc(90vh);
+  min-width: 250px;
 }
