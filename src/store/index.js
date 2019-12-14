@@ -1,9 +1,9 @@
 /*
- * @description: 头部描述
+ * @description: store主文件
  * @Author: Coder
  * @Date: 2019-12-11 20:21:40
  * @LastEditors: Coder
- * @LastEditTime: 2019-12-11 21:09:12
+ * @LastEditTime: 2019-12-14 15:08:21
  * @FilePath: \vuex\src\store\index.js
  */
 import Vue from "vue";
@@ -13,21 +13,10 @@ import createPersistedState from "vuex-persistedstate";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    add(state) {
-      state.count++;
-    },
-    del(state) {
-      state.count--;
-    },
-    clear(state) {
-      state.count = 0;
-    }
-  },
+  state: {},
+  mutations: {},
   actions: {},
+  getters: {},
   modules: {},
   plugins: [createPersistedState()]
 });

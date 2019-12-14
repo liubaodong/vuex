@@ -1,9 +1,9 @@
 /*
- * @description: 头部描述
+ * @description: 入口main.js
  * @Author: Coder
  * @Date: 2019-12-11 20:21:39
  * @LastEditors: Coder
- * @LastEditTime: 2019-12-11 20:50:52
+ * @LastEditTime: 2019-12-14 15:07:32
  * @FilePath: \vuex\src\main.js
  */
 import Vue from "vue";
